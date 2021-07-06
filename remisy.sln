@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "remisy", "remisy\remisy.pyproj", "{B967F80C-3572-4079-BFA9-01804F66ED25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B967F80C-3572-4079-BFA9-01804F66ED25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B967F80C-3572-4079-BFA9-01804F66ED25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40F5B2BE-1AF0-4C46-9460-B50D5E7CF3FA}
+	EndGlobalSection
+EndGlobal
