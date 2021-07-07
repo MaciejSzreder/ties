@@ -25,6 +25,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="default.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="HTMLtoXML.py">
       <SubType>Code</SubType>
     </Compile>
