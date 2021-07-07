@@ -25,6 +25,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="arguments.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="default.py">
       <SubType>Code</SubType>
     </Compile>
