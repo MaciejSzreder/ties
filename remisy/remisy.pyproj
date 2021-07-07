@@ -28,6 +28,9 @@
     <Compile Include="arguments.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="calculations.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="default.py">
       <SubType>Code</SubType>
     </Compile>
