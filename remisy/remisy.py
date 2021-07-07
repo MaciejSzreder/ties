@@ -1,4 +1,4 @@
-#PATH_DATA="data.htm"
+#PATH_DATA="data.html"
 #PATH_RESOULT="result.csv"
 
 #PATH_FIRST=".//*[@class='fin']"
@@ -8,7 +8,7 @@
 
 #-p1 ".//*[@class='fin']" -r1 "\d+" -p2 ".//*[@class='fin']" -r2 "(?<=:)\d+"
 
-PATH_DATA="data.htm"
+PATH_DATA="data.html"
 PATH_RESOULT="result.csv"
 
 PATH_FIRST=".//*[@class='event__scores fontBold']/span[1]"
@@ -22,7 +22,7 @@ import re
 import sys
 import argparse
 
-#read htms as xml
+#read html as xml
 class HTML2XML(HTMLParser):
     def __init__(self):
         super().__init__()
@@ -88,7 +88,16 @@ argparser.add_argument(
     default=EXPR_SECOND,
     help="Pattern of second data in text."
 )
+argparser.add_argument(
+    "--direction","-d",
+    dest="direction",
+    default="forward",
+    choices=["forward","backward"],
+    help="Determine direction of writing a result. Accepts only two values: 'forward' (default) or 'backward'."
+)
 args=argparser.parse_args()
+
+reverse=args.direction=="backward"
 
 dataPath=args.source;
 outDataPath=args.result;
@@ -110,7 +119,12 @@ count=1
 firstRegExp=re.compile(firstRegExp)
 secondRegExp=re.compile(secondRegExp)
 resuts=open(outDataPath,'a')
-for firstNode,secondNode in zip(root.findall(firstPath),root.findall(secondPath)):
+firstList=root.findall(firstPath)
+secondList=root.findall(secondPath)
+if(reverse):
+    firstList.reverse()
+    secondList.reverse()
+for firstNode,secondNode in zip(firstList,secondList):
     firstText=firstNode.text;
     secondText=secondNode.text;
     firstMatch=firstRegExp.search(firstText)

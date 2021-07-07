@@ -12,7 +12,7 @@
     <Name>remisy</Name>
     <RootNamespace>remisy</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>-h</CommandLineArguments>
+    <CommandLineArguments>-d backward</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
