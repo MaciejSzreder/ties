@@ -12,7 +12,8 @@
     <Name>remisy</Name>
     <RootNamespace>remisy</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>-h</CommandLineArguments>
+    <CommandLineArguments>
+    </CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -24,6 +25,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="HTMLtoXML.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="remisy.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

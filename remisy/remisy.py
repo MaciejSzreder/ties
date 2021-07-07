@@ -17,38 +17,11 @@ EXPR_FIRST='\d+'
 EXPR_SECOND='\d+'
 
 import xml.etree.ElementTree as ET
-from html.parser import HTMLParser
 import re
 import sys
 import argparse
 
-#read htms as xml
-class HTML2XML(HTMLParser):
-    def __init__(self):
-        super().__init__()
-        self.tree=ET.TreeBuilder()
-
-    def handle_starttag(self, tag, attrs):
-        dic={}
-        for id,val in attrs:
-            dic[id]=val
-        self.tree.start(tag,dic)
-        pass #print("<", tag,'>')
-
-    def handle_endtag(self, tag):
-        self.tree.end(tag)
-        pass #print("</", tag,'>')
-        
-    def handle_startendtag(self, tag, attrs):
-        self.handle_starttag(tag, attrs)
-        self.handle_endtag(tag)
-
-    def handle_data(self, data):
-        self.tree.data(data)
-        pass #rint(data)
-
-    def getRoot(self):
-        return self.tree.close()
+from  HTMLtoXML import HTML2XML
 
 #get command line arguments
 argparser=argparse.ArgumentParser(description="This program load data of match results form source file (in html syntax) and create file (csv) with distance between ties")
