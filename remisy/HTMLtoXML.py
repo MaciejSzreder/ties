@@ -23,5 +23,5 @@ class HTML2XML(HTMLParser):
     def handle_data(self, data):
         self.tree.data(data)
 
-    def getRoot(self):
+    def get_root(self):
         return self.tree.close()

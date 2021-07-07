@@ -21,7 +21,7 @@ HTMLFile = open(args.source, "r",encoding='utf-8')
 data = HTMLFile.read()
 parser = HTML2XML()
 parser.feed(data)
-root=parser.getRoot()
+root=parser.get_root()
 
 
 results=open(args.result,'a')
