@@ -4,13 +4,13 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>b967f80c-3572-4079-bfa9-01804f66ed25</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>remisy.py</StartupFile>
+    <StartupFile>ties.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>remisy</Name>
-    <RootNamespace>remisy</RootNamespace>
+    <Name>ties</Name>
+    <RootNamespace>ties</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
     <CommandLineArguments>-h</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
@@ -36,7 +36,7 @@
     <Compile Include="HTMLtoXML.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="remisy.py" />
+    <Compile Include="ties.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
