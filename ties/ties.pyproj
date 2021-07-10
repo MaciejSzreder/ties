@@ -24,19 +24,22 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="arguments.py">
+    <Compile Include="scripts\arguments.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="calculations.py">
+    <Compile Include="scripts\calculations.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="default.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HTMLtoXML.py">
+    <Compile Include="scripts\HTMLtoXML.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ties.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="scripts\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

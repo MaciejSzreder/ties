@@ -12,9 +12,9 @@
 
 
 
-from  HTMLtoXML import HTML2XML
-from arguments import args
-from calculations import calc_gaps
+from scripts.HTMLtoXML import HTML2XML
+from scripts.arguments import args
+from scripts.calculations import calc_gaps
 
 #load data
 HTMLFile = open(args.source, "r",encoding='utf-8')
