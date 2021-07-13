@@ -12,16 +12,12 @@
 
 
 
-from scripts.HTMLtoXML import HTML2XML
+from scripts.HTMLtoXML import read_html
 from scripts.arguments import args
 from scripts.calculations import calc_gaps
 
 #load data
-HTMLFile = open(args.source, "r",encoding='utf-8')
-data = HTMLFile.read()
-parser = HTML2XML()
-parser.feed(data)
-root=parser.get_root()
+root=read_html(args.source)
 
 
 results=open(args.result,'a')
