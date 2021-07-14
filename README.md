@@ -26,12 +26,177 @@ The default files are data.html for input and result.csv for output. To change t
 python ties.py -in soccer.html -out soccer.csv
 ```
 To service different format of HTML file you should specify the path to scores of both sides. To specify element containing text with score use --path1 or -p1 for first side and --path2 or -p2 for second. The path should be XPath. Python standard liblary have poor suport for it, to expand support instal lxml liblary.
+E.g.
 ```shell
-python ties.py -p1 "[@class='game']/[@class='score'][1]" -p2 "[@class='game']/[@class='score'][2]" 
+python ties.py -p1 ".//*[@class='game']/*[@class='score'][3]" -p2 ".//*[@class='game']/*[@class='score'][4]"
+```
+can be used for file:
+```html
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset=utf-8>
+		<title>blah</title>
+	</head>
+	<body>
+		<table>
+			<tr class='game'>
+				<td class="team">
+					first
+				</td>
+				<td class="team">
+					second
+				</td>
+				<td class="score">
+					2
+				</td>
+				<td class="score">
+					2
+				</td>
+			</tr>
+			<tr class='game'>
+				<td class="team">
+					first
+				</td>
+				<td class="team">
+					thrid
+				</td>
+				<td class="score">
+					2
+				</td>
+				<td class="score">
+					1
+				</td>
+			</tr>
+			<tr class='game'>
+				<td class="team">
+					first
+				</td>
+				<td class="team">
+					fourth
+				</td>
+				<td class="score">
+					2
+				</td>
+				<td class="score">
+					2
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
 ```
 If the node with score is more text than just a number you can use --regexp1, -r1, --regexp2, -r2 to specyfi the shape of data.
+E.g.
 ```shell
-python ties.py -p1 "[@class='scores']" -r1 "\d+" -p2 "[@class='scores']" -r2 "(?<=:)\d+"
+python ties.py -p1 ".//*[@class='game']/*[@class='team'][1]" -p2 ".//*[@class='game']/*[@class='team'][2]" -r1 "(?<=\()\d+" -r2 "(?<=\()\d+"
+```
+```html
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset=utf-8>
+		<title>blah</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>
+					host (score)
+				</th>
+				<th>
+					guest (score)
+				</th>
+			</tr>
+			<tr class='game'>
+				<td class="team">
+					first1 (2)
+				</td>
+				<td class="team">
+					second2 (2)
+				</td>
+			</tr>
+			<tr class='game'>
+				<td class="team">
+					first1 (2)
+				</td>
+				<td class="team">
+					thrid3 (1)
+				</td>
+			</tr>
+			<tr class='game'>
+				<td class="team">
+					first1 (2)
+				</td>
+				<td class="team">
+					fourth1 (2)
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+```
+We can deal even with scores for both teams in one element
+```shell
+python ties.py -p1 ".//*[@class='scores']" -r1 "\d+" -p2 ".//*[@class='scores']" -r2 "(?<=:)\d+"
+```
+can be used for file:
+```html
+<!doctype html>
+<html lang=en>
+	<head>
+		<meta charset=utf-8>
+		<title>games</title>
+	</head>
+	<body>
+		<table>
+			<tr>
+				<th>
+					host
+				</th>
+				<th>
+					guest
+				</th>
+				<th>
+					scores
+				</th>
+			</tr>
+			<tr class='game'>
+				<td class="team">
+					first
+				</td>
+				<td class="team">
+					second
+				</td>
+				<td class="scores">
+					2:2
+				</td>
+			</tr>
+			<tr class='game'>
+				<td class="team">
+					first
+				</td>
+				<td class="team">
+					thrid
+				</td>
+				<td class="scores">
+					2:1
+				</td>
+			</tr>
+			<tr class='game'>
+				<td class="team">
+					first
+				</td>
+				<td class="team">
+					fourth
+				</td>
+				<td class="scores">
+					2:2
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
 ```
 
 ### default.py file
@@ -49,6 +214,7 @@ The following table shows which constant responds to which parameter.
 ## Features
 * count distant between ites
 * suport for any shape HTML file
+
 To Do:
 * support for XML file
 * support for MS Excel file format
