@@ -11,7 +11,6 @@
 
 
 
-
 from scripts.HTMLtoXML import read_html
 from scripts.arguments import args
 from scripts.calculations import calc_gaps
