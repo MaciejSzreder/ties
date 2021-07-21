@@ -93,10 +93,10 @@ needed=(^
 	
 	echo
 	(tree -a "$repo" ||
-	tree.com //a //f "$repo" ||
 	gio tree -h "$repo" ||
-	gvfs-tree -h "repo" ||
-	find %repo | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
+	gvfs-tree -h "$repo" ||
+	tree.com //a //f "$repo" ||
+	find $repo | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
 	)2>/dev/null
 
 #sources
