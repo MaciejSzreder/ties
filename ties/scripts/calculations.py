@@ -10,6 +10,15 @@ try:
         #except:
             return node.findall(path)
 
+    ns=etree.FunctionNamespace(None)
+    @ns
+    def content(context,nodes):
+        return [node.xpath("string(.)") for node in nodes or context]
+
+    @ns
+    def rawxml(contect,nodes):
+        return [etree.tostring(node).decode() for node in nodes]
+
 except:
     import xml.etree.ElementTree as etree
 
