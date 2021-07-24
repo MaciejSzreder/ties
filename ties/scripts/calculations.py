@@ -12,12 +12,12 @@ try:
 
     ns=etree.FunctionNamespace(None)
     @ns
-    def content(context,nodes):
-        return [node.xpath("string(.)") for node in nodes or context]
+    def content(context,nodes=None):
+        return [node.xpath("string(.)") for node in nodes or context.context_node]
 
     @ns
-    def rawxml(contect,nodes):
-        return [etree.tostring(node).decode() for node in nodes]
+    def rawxml(contect,nodes=None):
+        return [etree.tostring(node).decode() for node in nodes or context.context_node]
 
 except:
     import xml.etree.ElementTree as etree
