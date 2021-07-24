@@ -7,3 +7,6 @@ PATH_FIRST=".//*[contains(@class,'first')]"
 PATH_SECOND=".//*[contains(@class,'second')]"
 EXPR_FIRST='\d+'
 EXPR_SECOND='\d+'
+
+DIRECTION="forward"
+#DIRECTION="backward"

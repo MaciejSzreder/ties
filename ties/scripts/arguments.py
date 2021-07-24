@@ -42,7 +42,7 @@ argparser.add_argument(
 )
 argparser.add_argument(
     "--direction","-d",
-    dest="direction",
+    dest=default.DIRECTION,
     default="forward",
     choices=["forward","backward"],
     help="Determine direction of writing a result. Accepts only two values: 'forward' (default) or 'backward'."
