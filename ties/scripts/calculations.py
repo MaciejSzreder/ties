@@ -14,10 +14,14 @@ try:
     @ns
     def content(context,nodes=None):
         return [node.xpath("string(.)") for node in nodes or context.context_node]
+    
+    @ns
+    def rawtailedxml(contect,nodes=None):
+        return [etree.tostring(node,with_tile=True).decode() for node in nodes or context.context_node]
 
     @ns
     def rawxml(contect,nodes=None):
-        return [etree.tostring(node).decode() for node in nodes or context.context_node]
+        return [etree.tostring(node,with_tail=False).decode() for node in nodes or context.context_node]
 
 except:
     import xml.etree.ElementTree as etree
