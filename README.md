@@ -1,29 +1,29 @@
 # Ties
 Simple program counting matchs between ties.
 ## Table of Contents
-[General info](#about)<br>
+[About](#about)<br>
 [Technologies](#technologies)<br>
 [Setup](#setup)<br>
 [Features](#features)
 
 ## About
-My friends aksed me about this script. They hope it could bring them the rich. I wish it them.
+My friends asked me about this script. They hope it could bring them the rich. I wish them it.
 
-The aim of this project is to take file with scores and count numbers of match between ties and write results to exel acceptable file.
+This project aims is to take a file with scores and count numbers of matches between ties and write results to an excel acceptable file.
 
 ## Technologies
 The project was created in **Visual Studio 2019**.\
 The language of code is **Python 3.7**.\
-This program can use **lxml** liblary for HTML parsing and extending XPath compability, but it is not required.
+This program can use **lxml** library for HTML parsing and extending XPath compatibility, but it is not required.
 
 ## Setup
-The code files are in folder _ties_. The main file is _ties.py_, but it require file _default.py_ and content of folder _scripts_.
-To run the program, type in command line:
+The code files are in folder _ties_. The main file is _ties.py_, but it requires file _default.py_ and content of folder _scripts_.
+To run the program, type in the command line:
 ```shell
 python ties.py
 ```
 ### unpack.py
-If you do not need project VS project and git files, you can delete them manualy or use _unpack.bat_:
+If you do not need project VS project and git files, you can delete them manually or use _unpack.bat_:
 * for Windows
 ```shell
 unpack.bat
@@ -33,8 +33,8 @@ unpack.bat
 bash unpack.bat
 ```
 _unpack.py_ is batch and bash polyglot.\
-You can run it safe form different plases, you do not need to be at the same folder what script, but you shoud not use ```source``` or ```.``` for run this script.\
-When _unpack.bat_ finish its job, it show remaind files. The show shape depend from command accesible in OS. Curently important files are:
+You can run it safe from different places, you do not need to be at the same folder what script, but you should not use ```source``` or ```.```to run this script.\
+When _unpack.bat_ finishes its job, it shows remained files. The show shape depends on the command accessible in OS. Currently important files are:
 ```
  📂ties
  ├📂scripts
@@ -49,11 +49,11 @@ If you want to see usage, type:
 ```shell
 python ties.py -h
 ```
-The default files are data.html for input and result.csv for output. To change them use --source, --src or -in for input data and --resoult, --rzt or -out for output.
+The default files are data.html for input and result.csv for output. To change them use --source, --src, or -in for input data and --results, --rzt, or -out for output.
 ```shell
 python ties.py -in soccer.html -out soccer.csv
 ```
-To service different format of HTML file you should specify the path to scores of both sides. To specify element containing text with score use --path1 or -p1 for first side and --path2 or -p2 for second. The path should be XPath. Python standard liblary have poor suport for it, to expand support instal lxml liblary.
+To service other formats of HTML files you should specify the path to scores of both sides. To specify elements containing text with score use --path1 or -p1 for the first side and --path2 or -p2 for another. The path should be XPath. Python standard library has poor support for it. To expand support, install the lxml library.
 E.g.
 ```shell
 python ties.py -p1 ".//*[@class='game']/*[@class='score'][3]" -p2 ".//*[@class='game']/*[@class='score'][4]"
@@ -114,7 +114,7 @@ can be used for file:
 	</body>
 </html>
 ```
-If the node with score is more text than just a number you can use --regexp1, -r1, --regexp2, -r2 to specyfi the shape of data.
+If the node with a score is more text than just a number you can use --regexp1, -r1, --regexp2, -r2 to specify the shape of data.
 E.g.
 ```shell
 python ties.py -p1 ".//*[@class='game']/*[@class='team'][1]" -p2 ".//*[@class='game']/*[@class='team'][2]" -r1 "(?<=\()\d+" -r2 "(?<=\()\d+"
@@ -164,7 +164,7 @@ python ties.py -p1 ".//*[@class='game']/*[@class='team'][1]" -p2 ".//*[@class='g
 	</body>
 </html>
 ```
-We can deal even with scores for both teams in one element
+You can deal even with scores for both teams in one element
 ```shell
 python ties.py -p1 ".//*[@class='scores']" -r1 "\d+" -p2 ".//*[@class='scores']" -r2 "(?<=:)\d+"
 ```
@@ -230,7 +230,7 @@ can be used for file:
 ### default.py file
 default.py contains default parameter, so if you do not write -p1, -p2, ... the ties.py takes values from here. Be careful about this content because until now it is an executable file and it is not injection resistant so be careful by untrusted code pasted here.
 If you want to change some default value, do not edit a single line but copy the line, put # at begin of the original line, and edit copy.
-The following table shows which constant responds to which parameter.
+The following table shows which constant response to which parameter.
 |parameter|default.py|
 |---------|----------|
 |-p1<br>--path1|PATH_FIRST|
