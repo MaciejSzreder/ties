@@ -1,23 +1,51 @@
-# ties
+# Ties
 Simple program counting matchs between ties.
 ## Table of Contents
+[General info](#about)<br>
+[Technologies](#technologies)<br>
+[Setup](#setup)<br>
+[Features](#features)
 
-## General info
-The aim of the project is 
+## About
+My friends aksed me about this script. They hope it could bring them the rich. I wish it them.
+
+The aim of this project is to take file with scores and count numbers of match between ties and write results to exel acceptable file.
 
 ## Technologies
-The project was created in Visual Studio 2019.
-Language of a code is Python 3.7.
-This program can use lxml liblary for HTML parsing and extending XPath compability, but it is not required.
+The project was created in **Visual Studio 2019**.\
+The language of code is **Python 3.7**.\
+This program can use **lxml** liblary for HTML parsing and extending XPath compability, but it is not required.
 
 ## Setup
-The code files are in folder "ties". The main file is "ties.py", but it require file "default.py" and content of folder scripts.
-To run the program type in command line:
+The code files are in folder _ties_. The main file is _ties.py_, but it require file _default.py_ and content of folder _scripts_.
+To run the program, type in command line:
 ```shell
 python ties.py
 ```
+### unpack.py
+If you do not need project VS project and git files, you can delete them manualy or use _unpack.bat_:
+* for Windows
+```shell
+unpack.bat
+```
+* for Linux(bash required)
+```shell
+bash unpack.bat
+```
+_unpack.py_ is batch and bash polyglot.\
+You can run it safe form different plases, you do not need to be at the same folder what script, but you shoud not use ```source``` or ```.``` for run this script.\
+When _unpack.bat_ finish its job, it show remaind files. The show shape depend from command accesible in OS. Curently important files are:
+```
+ 📂ties
+ ├📂scripts
+ │├📜arguments.py
+ │├📜calculations.py
+ │└📜HTMLtoXML.py
+ ├📜ties.py
+ └📜default.py
+```
 ### ties.py file
-If you want to see usage type:
+If you want to see usage, type:
 ```shell
 python ties.py -h
 ```
