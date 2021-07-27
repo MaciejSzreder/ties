@@ -13,7 +13,7 @@ argparser.add_argument(
 argparser.add_argument(
     "--result","--rzt","-out",
     dest="result",
-    default=default.PATH_RESOULT,
+    default=default.PATH_RESULT,
     help="Path to file to append result. File will have csv format."
 )
 argparser.add_argument(
@@ -42,7 +42,7 @@ argparser.add_argument(
 )
 argparser.add_argument(
     "--direction","-d",
-    dest="default",
+    dest="direction",
     default=default.DIRECTION,
     choices=["forward","backward"],
     help="Determine direction of writing a result. Accepts only two values: 'forward' (default) or 'backward'."
