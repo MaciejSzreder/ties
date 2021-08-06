@@ -46,6 +46,9 @@
     <Compile Include="test_arguments.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test_HTMLtoXML_basic.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ties.py" />
   </ItemGroup>
   <ItemGroup>
